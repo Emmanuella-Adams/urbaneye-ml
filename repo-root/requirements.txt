@@ -1,0 +1,14 @@
+datasets
+transformers
+torch
+tensorflow
+scikit-learn
+pandas
+numpy
+matplotlib
+opencv-python
+seaborn
+segmentation-models-pytorch
+textstat
+nltk
+textblob
