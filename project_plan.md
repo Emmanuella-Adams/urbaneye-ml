@@ -26,10 +26,6 @@
 - Finalization of model selection and training.
 - Submission of evaluation visuals and report.
 
-## Team Members
-- [Name 1]: Data Preparation and EDA
-- [Name 2]: Model Training and Evaluation
-- [Name 3]: Reporting and Visualization
 
 ## Resources
 - Access to [specific datasets or tools].
@@ -43,4 +39,4 @@
   - **Mitigation**: Explore multiple algorithms and tuning strategies.
 
 ## Conclusion
-This project plan serves as a roadmap for the successful execution of the machine learning project, ensuring all team members are aligned on objectives and timelines.
+This project plan serves as a roadmap for the successful execution of the machine learning project, ensuring all actions are aligned on objectives and timelines.
