@@ -1,7 +1,7 @@
 # Project Plan
 
 ## Project Objectives
-- To develop a machine learning model that effectively addresses [specific problem or task].
+- To develop a machine learning model that effectivel supports urban planning, population estimation, geospatial research, and disaster response, especially for fast-growing African cities..
 - To ensure the model is robust, interpretable, and generalizes well to unseen data.
 
 ## Timeline
