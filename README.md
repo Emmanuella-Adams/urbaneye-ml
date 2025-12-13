@@ -4,6 +4,7 @@ UrbanEye is a lightweight, fully reproducible computer vision pipeline for detec
 
 This project uses sample tiles derived from **Microsoft Building Footprints – Kenya (GeoJSON)** paired with rasterized masks for segmentation. A U-Net with a ResNet encoder is used to produce high-quality pixel-level predictions.
 
+[View Demo](https://gamma.app/docs/UrbanEye-Building-Footprint-Detection-for-Urban-Planning-n3d72fowb0iu4wo)
 ---
 
 ## Table of Contents
