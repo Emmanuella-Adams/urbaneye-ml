@@ -48,6 +48,13 @@ def plot_segmentation_predictions(images, masks, preds, num_samples=3, save_path
     """
     Plot visual comparison panels: Satellite RGB Image | Ground Truth Mask | Predicted Mask | Overlay
     """
+    if isinstance(images, torch.Tensor):
+        images = images.detach().cpu()
+    if isinstance(masks, torch.Tensor):
+        masks = masks.detach().cpu()
+    if isinstance(preds, torch.Tensor):
+        preds = preds.detach().cpu()
+
     num_samples = min(num_samples, len(images))
     fig, axes = plt.subplots(num_samples, 4, figsize=(16, 4 * num_samples))
 
@@ -55,9 +62,9 @@ def plot_segmentation_predictions(images, masks, preds, num_samples=3, save_path
         axes = np.expand_dims(axes, axis=0)
 
     for i in range(num_samples):
-        img_np = images[i].cpu().numpy().transpose(1, 2, 0)
-        mask_np = masks[i].cpu().numpy().squeeze()
-        pred_np = (preds[i].cpu().numpy().squeeze() >= 0.5).astype(np.float32)
+        img_np = images[i].numpy().transpose(1, 2, 0)
+        mask_np = masks[i].numpy().squeeze()
+        pred_np = (preds[i].numpy().squeeze() >= 0.5).astype(np.float32)
 
         # Panel 1: Original Image
         axes[i, 0].imshow(img_np)
