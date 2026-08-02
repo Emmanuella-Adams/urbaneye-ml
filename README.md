@@ -52,8 +52,8 @@ This project uses sample tiles derived from **Microsoft Building Footprints – 
 UrbanEye is a reproducible segmentation pipeline that detects building footprints from satellite images using samples extracted from the **Microsoft Kenya Building Footprints** GeoJSON dataset. A U-Net with a ResNet encoder trains on 256×256 tiles to produce segmentation masks suitable for lightweight geospatial analysis.
 
 **Example Performance Metrics:**
-*   Mean IoU: `<MEAN_IOU>`
-*   F1 Score: `<F1_SCORE>`
+*   Mean IoU: `0.6384`
+*   F1 Score: `0.7793`
 
 This project aligns with **Google Research Africa’s geospatial research priorities** through practical, data-driven urban analysis.
 
@@ -88,18 +88,18 @@ The data preparation process is detailed in `notebooks/01_data_prep.ipynb`:
 *   Data split: 70% Train, 15% Validation, 15% Test.
 
 ### 4.2 Model Architecture
-A U-Net model is implemented using `segmentation-models-pytorch`:
-*   **Encoder:** ResNet-18 (pretrained on ImageNet).
-*   **Decoder:** Standard U-Net decoder.
+A U-Net model is implemented using PyTorch:
+*   **Encoder:** Contracting convolutional encoder.
+*   **Decoder:** Expanding U-Net decoder with skip connections.
 *   **Activation:** Sigmoid for binary output.
 *   **Loss Function:** Binary Cross-Entropy + Dice Loss.
-*   **Optimizer:** Adam (learning rate = 1e-4).
+*   **Optimizer:** Adam (learning rate = 1e-3).
 
 ### 4.3 Training
 Training is conducted in `notebooks/02_model_training.ipynb`.
 
 **Settings:**
-*   Epochs: 5–20.
+*   Epochs: 8–20.
 *   Augmentations: Rotations and flips.
 *   Callbacks: Early stopping to prevent overfitting.
 
@@ -122,10 +122,10 @@ Ground truth vs. predicted mask comparisons and prediction overlays are generate
 
 | Metric | Score |
 |--------|--------|
-| Mean IoU | `<MEAN_IOU>` |
-| F1 Score | `<F1_SCORE>` |
-| Precision | `<PRECISION>` |
-| Recall | `<RECALL>` |
+| Mean IoU | `0.6384` |
+| F1 Score | `0.7793` |
+| Precision | `0.8873` |
+| Recall | `0.6948` |
 
 ### Key Findings
 *   Strong detection performance for medium and large rooftops.
